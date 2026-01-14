@@ -11,8 +11,6 @@
         body, html {
             min-height: 100vh;
             width: 100%;
-            /* TONE MÀU: Hồng đỏ cực đậm -> Hồng rực -> Hồng nhạt hoa anh đào */
-            background: #800020; 
             background: linear-gradient(180deg, #800020 0%, #d81b60 50%, #FFB7C5 100%);
             background-attachment: fixed;
             display: flex;
@@ -23,12 +21,11 @@
             overflow-x: hidden;
         }
 
-        /* HIỆU ỨNG TRÁI TIM TO GẤP ĐÔI */
+        /* HIỆU ỨNG TRÁI TIM RƠI */
         .heart {
             position: fixed;
             top: -50px;
             color: #ff4081;
-            /* Tăng kích thước từ 20px lên trung bình 40px-50px */
             font-size: 40px; 
             pointer-events: none;
             z-index: 1;
@@ -50,7 +47,6 @@
             margin-top: 20px;
         }
 
-        /* THIỆP */
         .card {
             width: 90%;
             max-width: 350px;
@@ -58,68 +54,70 @@
             border: 6px solid #ad1457;
             border-radius: 30px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            padding: 40px 20px;
+            padding: 30px 20px;
             text-align: center;
         }
 
-        .grad-cap { font-size: 60px; margin-bottom: 10px; }
+        .grad-cap { font-size: 50px; margin-bottom: 5px; }
 
-        h2 { font-family: 'Dancing Script', cursive; font-size: 2.8rem; color: #880e4f; line-height: 1.2; margin-bottom: 15px; }
+        h2 { font-family: 'Dancing Script', cursive; font-size: 2.6rem; color: #880e4f; line-height: 1.2; margin-bottom: 10px; }
         
-        /* DÒNG CHỮ ĐÃ THAY ĐỔI THEO YÊU CẦU */
-        .sub-text { color: #555; font-size: 1.2rem; margin-bottom: 20px; line-height: 1.4; font-weight: bold; }
+        .sub-text { color: #555; font-size: 1.1rem; margin-bottom: 15px; line-height: 1.4; font-weight: bold; }
         
-        .line { width: 140px; height: 4px; background: #ad1457; margin: 0 auto 20px auto; border-radius: 10px; }
+        .line { width: 120px; height: 3px; background: #ad1457; margin: 0 auto 15px auto; border-radius: 10px; }
 
+        /* DEAR MAI LINH TRÊN 1 HÀNG */
         #displayName { 
             font-family: 'Dancing Script', cursive; 
-            font-size: 3.2rem; 
+            font-size: 2.8rem; 
             color: #d81b60; 
-            margin: 10px 0;
+            margin: 5px 0;
+            white-space: nowrap; /* Giữ chữ trên cùng 1 hàng */
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .info-box {
-            margin-top: 25px;
-            padding-top: 20px;
+            margin-top: 20px;
+            padding-top: 15px;
             border-top: 2px dashed #ffc1e3;
-            text-align: left;
+            text-align: center; /* Căn giữa để xuống dòng đẹp hơn */
             width: 100%;
         }
-        .info-row { margin-bottom: 10px; font-size: 1.1rem; color: #333; }
-        .info-row strong { color: #ad1457; }
+        .info-row { margin-bottom: 15px; font-size: 1.1rem; color: #333; line-height: 1.5; }
+        .info-row strong { color: #ad1457; display: block; margin-bottom: 2px; } /* Đẩy label lên trên */
 
         .countdown {
             display: flex;
             justify-content: center;
-            gap: 8px;
-            margin-top: 20px;
+            gap: 6px;
+            margin-top: 15px;
         }
         .cd-item {
             background: #ad1457;
             color: white;
-            padding: 10px 5px;
-            border-radius: 12px;
-            min-width: 62px;
+            padding: 8px 4px;
+            border-radius: 10px;
+            min-width: 58px;
         }
-        .cd-num { display: block; font-size: 1.2rem; font-weight: 800; }
-        .cd-lab { font-size: 0.65rem; }
+        .cd-num { display: block; font-size: 1.1rem; font-weight: 800; }
+        .cd-lab { font-size: 0.6rem; }
 
-        /* BẢNG ĐIỀU KHIỂN */
         #adminPanel {
             background: rgba(255, 255, 255, 0.95);
-            padding: 20px;
+            padding: 15px;
             border-radius: 20px;
             width: 90%;
             max-width: 350px;
-            margin-top: 25px;
+            margin-top: 20px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
-        input { padding: 12px; border: 2px solid #f8bbd0; border-radius: 12px; text-align: center; font-size: 1rem; outline: none; }
-        .btn { background: #ad1457; color: white; border: none; padding: 12px; border-radius: 50px; cursor: pointer; font-weight: bold; transition: 0.3s; }
-        #msg { color: #ad1457; font-size: 0.85rem; text-align: center; font-weight: bold; height: 1.2em; }
+        input { padding: 10px; border: 2px solid #f8bbd0; border-radius: 10px; text-align: center; font-size: 1rem; outline: none; }
+        .btn { background: #ad1457; color: white; border: none; padding: 10px; border-radius: 50px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        #msg { color: #ad1457; font-size: 0.8rem; text-align: center; font-weight: bold; height: 1em; }
     </style>
 </head>
 <body>
@@ -131,11 +129,17 @@
             <p class="sub-text">Mời em tham dự buổi chụp kỷ yếu cùng anh</p>
             <div class="line"></div>
             
-            <h1 id="displayName">Dear Bạn</h1>
+            <h1 id="displayName">Dear Mai Linh</h1>
 
             <div class="info-box">
-                <div class="info-row">📅 <strong>Thời gian:</strong> 09:50 - 18/01/2026</div>
-                <div class="info-row">📍 <strong>Địa điểm:</strong> THPT Chuyên Lê Quý Đôn</div>
+                <div class="info-row"> 
+                    <strong>Thời gian:</strong> 
+                    09:50 - 18/01/2026 
+                </div>
+                <div class="info-row"> 
+                    <strong>Địa điểm:</strong> 
+                    THPT Chuyên Lê Quý Đôn 
+                </div>
             </div>
 
             <div class="countdown" id="timer">
@@ -145,31 +149,30 @@
                 <div class="cd-item"><span id="secs" class="cd-num">00</span><span class="cd-lab">Giây</span></div>
             </div>
             
-            <p style="margin-top: 25px; font-family: 'Dancing Script'; font-size: 1.8rem; color: #ad1457;">Together we made memories</p>
+            <p style="margin-top: 20px; font-family: 'Dancing Script'; font-size: 1.6rem; color: #ad1457;">Together we made memories</p>
         </div>
 
         <div id="adminPanel">
-            <input type="text" id="nameInput" placeholder="Nhập tên người nhận...">
+            <input type="text" id="nameInput" placeholder="Nhập tên người khác...">
             <button class="btn" onclick="updateName()">Đổi tên xem thử</button>
-            <button class="btn" style="background: #880e4f;" onclick="shareLink()">Tạo link gửi cho em</button>
+            <button class="btn" style="background: #880e4f;" onclick="shareLink()">Tạo link riêng cho em</button>
             <p id="msg"></p>
         </div>
     </div>
 
     <script>
-        // HIỆU ỨNG TRÁI TIM TO
         function createHeart() {
             const heart = document.createElement('div');
             heart.className = 'heart';
-            heart.innerHTML = ['❤️', '💖', '💕', '💗', '🌸'][Math.floor(Math.random() * 5)];
+            const icons = ['❤️', '💖', '💗', '💕', '🌹'];
+            heart.innerHTML = icons[Math.floor(Math.random() * icons.length)];
             heart.style.left = Math.random() * 100 + 'vw';
             heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
-            // Kích thước to gấp đôi (từ 30px đến 50px)
-            heart.style.fontSize = (Math.random() * 20 + 35) + 'px';
+            heart.style.fontSize = (Math.random() * 15 + 25) + 'px';
             document.body.appendChild(heart);
             setTimeout(() => heart.remove(), 6000);
         }
-        setInterval(createHeart, 400);
+        setInterval(createHeart, 500);
 
         function updateName() {
             const name = document.getElementById('nameInput').value.trim();
@@ -184,7 +187,7 @@
             if(!name) { alert("Nhập tên đã!"); return; }
             const url = window.location.href.split('?')[0] + "?n=" + encodeURIComponent(name);
             navigator.clipboard.writeText(url).then(() => {
-                document.getElementById('msg').innerText = "✅ Đã copy link thành công!";
+                document.getElementById('msg').innerText = "Đã copy link thành công!";
             });
         }
 
